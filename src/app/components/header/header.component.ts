@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  showAddForm: boolean = false;
   title: string = 'Task Tracker';
+
+  constructor(private uiService: UiService) {
+    uiService.onToggle().subscribe(value => this.showAddForm = value);
+  }
 
   ngOnInit() {
 
   }
 
   toggleAddTask() {
-    console.log("HeaderComponent.toggleAddTask");
+    this.uiService.toggleShowAddForm();
   }
 }
