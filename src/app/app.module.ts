@@ -14,7 +14,8 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
-  { path: '', component: TasksComponent }
+  { path: '', component: TasksComponent },
+  { path: 'about', component: AboutComponent },
 ]
 
 @NgModule({
