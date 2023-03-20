@@ -12,9 +12,10 @@ export class AddTaskComponent {
   day: string = '';
   reminder: boolean = false;
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
-  showAddForm: boolean = false;
+  showAddForm: boolean;
 
   constructor(private uiService: UiService) {
+    this.showAddForm = this.uiService.getCurrentShowAddForm();
     this.uiService.onToggle().subscribe(value => this.showAddForm = value);
   }
 

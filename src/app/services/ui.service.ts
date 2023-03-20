@@ -18,4 +18,8 @@ export class UiService {
   onToggle() {
     return this.subject.asObservable();
   }
+
+  getCurrentShowAddForm() {
+    return this.showAddForm;
+  }
 }
