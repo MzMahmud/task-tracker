@@ -1,12 +1,3 @@
-<div class="btn-container">
-    <app-button 
-        text="{{ showAddForm? 'Close' : 'Add'}}" 
-        color="{{ showAddForm? 'red' : 'green'}}"
-        (btnClick)="toggleAddTask()"
-    >
-    </app-button>
-</div>
-
 <form *ngIf="showAddForm" class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-control">
         <label for="text">Task</label>
