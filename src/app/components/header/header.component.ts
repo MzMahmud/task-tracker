@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UiService } from 'src/app/services/ui.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
