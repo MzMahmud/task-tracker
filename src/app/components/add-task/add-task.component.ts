@@ -15,7 +15,7 @@ export class AddTaskComponent {
   showAddForm: boolean = false;
 
   constructor(private uiService: UiService) {
-    uiService.onToggle().subscribe(value => this.showAddForm = value);
+    this.uiService.onToggle().subscribe(value => this.showAddForm = value);
   }
 
   onSubmit() {
