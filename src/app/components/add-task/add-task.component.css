@@ -1,3 +1,9 @@
 .add-form {
     margin-bottom: 40px;
 }
+
+.btn-container {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}

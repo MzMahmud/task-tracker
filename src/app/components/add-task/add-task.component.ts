@@ -18,6 +18,10 @@ export class AddTaskComponent {
     this.uiService.onToggle().subscribe(value => this.showAddForm = value);
   }
 
+  toggleAddTask() {
+    this.uiService.toggleShowAddForm();
+  }
+
   onSubmit() {
     if (!this.text) {
       alert("Please insert a task!");

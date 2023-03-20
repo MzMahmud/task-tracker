@@ -7,23 +7,6 @@ import { UiService } from 'src/app/services/ui.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  showAddForm: boolean = false;
+export class HeaderComponent {
   title: string = 'Task Tracker';
-
-  constructor(private uiService: UiService, private router: Router) {
-    uiService.onToggle().subscribe(value => this.showAddForm = value);
-  }
-
-  ngOnInit() {
-
-  }
-
-  toggleAddTask() {
-    this.uiService.toggleShowAddForm();
-  }
-
-  hasRoute(url: string): boolean {
-    return this.router.url === url;
-  }
 }
