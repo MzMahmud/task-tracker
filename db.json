@@ -17,18 +17,6 @@
       "text": "Food Shopping",
       "day": "May 7th at 12:30pm",
       "reminder": false
-    },
-    {
-      "text": "Test",
-      "day": "Moaz",
-      "reminder": false,
-      "id": 4
-    },
-    {
-      "text": "Test",
-      "day": "Moaz2",
-      "reminder": true,
-      "id": 5
     }
   ]
 }
