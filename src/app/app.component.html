@@ -4,7 +4,7 @@
 
 <div>
   Months:
-  <select name="month" id="month">
+  <select name="month" id="month" (change)="onMonthChange($event)">
     <option *ngFor="let month of months; index as monthIndex"
             [value]="monthIndex + 1"
             [selected]="monthIndex + 1 === selectedMonth">
@@ -48,4 +48,10 @@
     <span>False Branch</span>
   </ng-template>
   <br>
+</div>
+
+<div>
+  <button (click)="onButtonClick($event)">
+    Click Me
+  </button>
 </div>

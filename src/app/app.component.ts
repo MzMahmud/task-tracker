@@ -12,4 +12,12 @@ export class AppComponent {
     "August", "September", "October", "November", "December"
   ];
   selectedMonth = 10;
+
+  onButtonClick(event: any) {
+    console.log(event);
+  }
+
+  onMonthChange(event: any) {
+    console.log(event);
+  }
 }
