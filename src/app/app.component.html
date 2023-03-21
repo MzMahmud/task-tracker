@@ -12,3 +12,40 @@
     </option>
   </select>
 </div>
+
+<div>
+  <span *ngIf="true">True</span><br>
+
+  <span *ngIf="false">False</span><br>
+  
+  <span *ngIf="true; else falseBranch">True Branch</span>
+  <ng-template #falseBranch>
+    <span>False Branch</span>
+  </ng-template>
+  <br>
+
+  <span *ngIf="false; else falseBranch">True Branch</span>
+  <ng-template #falseBranch>
+    <span>False Branch</span>
+  </ng-template>
+  <br>
+
+
+  <span *ngIf="true; then trueBranch; else falseBranch"></span>
+  <ng-template #trueBranch>
+    <span>True Branch</span>
+  </ng-template>
+  <ng-template #falseBranch>
+    <span>False Branch</span>
+  </ng-template>
+  <br>
+
+  <span *ngIf="false; then trueBranch; else falseBranch"></span>
+  <ng-template #trueBranch>
+    <span>True Branch</span>
+  </ng-template>
+  <ng-template #falseBranch>
+    <span>False Branch</span>
+  </ng-template>
+  <br>
+</div>
