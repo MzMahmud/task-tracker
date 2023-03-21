@@ -1,3 +1,14 @@
 <div>
   Hello World!
 </div>
+
+<div>
+  Months:
+  <select name="month" id="month">
+    <option *ngFor="let month of months; index as monthIndex"
+            [value]="monthIndex + 1"
+            [selected]="monthIndex + 1 === selectedMonth">
+      {{month}}
+    </option>
+  </select>
+</div>

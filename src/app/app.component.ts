@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Task Tracker';
+  months = [
+    "January", "February", "March", "April", "May", "June", "July", 
+    "August", "September", "October", "November", "December"
+  ];
+  selectedMonth = 10;
 }
