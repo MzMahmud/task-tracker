@@ -11,4 +11,8 @@ export class UserFormComponent {
     firstName: new FormControl(''),
     lastName: new FormControl(''),
   });
+
+  onSubmit() {
+    console.warn(this.profileForm.value);
+  }
 }
