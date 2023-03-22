@@ -22,9 +22,14 @@
     <div class="form-group">
       <label for="power">Hero Power</label>
       <select class="form-control" id="power" required
-              [(ngModel)]="model.power" name="power">
-        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+              [(ngModel)]="model.power" name="power"
+              #power="ngModel">
+        <option *ngFor="let pow of powers" [value]="pow">{{pow? pow : 'Select'}}</option>
       </select>
+      <div [hidden]="power.valid || power.pristine"
+           class="alert alert-danger">
+        Power is required
+      </div>
     </div>
 
     <button type="submit" class="btn btn-success">
