@@ -30,6 +30,18 @@
 
     <button type="button" (click)="updateProfile()">Update Profile</button>
 
+
+    <div formArrayName="aliases">
+      <h2>Aliases</h2>
+      <button type="button" (click)="addAlias()">+ Add another alias</button>
+
+      <div *ngFor="let alias of aliases.controls; let i=index">
+        <!-- The repeated alias template -->
+        <label for="alias-{{ i }}">Alias:</label>
+        <input id="alias-{{ i }}" type="text" [formControlName]="i">
+      </div>
+    </div>
+
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
 </div>
