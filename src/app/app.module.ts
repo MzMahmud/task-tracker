@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { ForbiddenValidatorDirective } from './shared/forbidden-name.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroFormComponent,
+    ForbiddenValidatorDirective
   ],
   imports: [
     BrowserModule,
