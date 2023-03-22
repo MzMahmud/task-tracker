@@ -1,26 +1,29 @@
-<div>
-  <form [formGroup]="profileForm"
-        (ngSubmit)="onSubmit()">
-    <label for="first-name">First Name *</label>
-    <input type="text" id="first-name" required formControlName="firstName">
+<div class="container p-3">
+  <h1>User Form</h1>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="first-name">First Name *</label>
+      <input type="text" class="form-control" id="first-name" required formControlName="firstName">
+    </div>
 
+    <div class="form-group">
+      <label for="last-name">Last Name *</label>
+      <input type="text" class="form-control" id="last-name" required formControlName="lastName">
+    </div>
 
-    <label for="last-name">Last Name *</label>
-    <input type="text" id="last-name" required formControlName="lastName">
-
-    <div formGroupName="address">
+    <div class="form-group" formGroupName="address">
       <h2>Address</h2>
       <label for="street">Street*: </label>
-      <input id="street" type="text" required formControlName="street">
+      <input class="form-control" id="street" type="text" required formControlName="street">
 
       <label for="city">City*: </label>
-      <input id="city" type="text" required formControlName="city">
+      <input class="form-control" id="city" type="text" required formControlName="city">
 
       <label for="state">State: </label>
-      <input id="state" type="text" formControlName="state">
+      <input class="form-control" id="state" type="text" formControlName="state">
 
       <label for="zip">Zip Code: </label>
-      <input id="zip" type="text" formControlName="zip">
+      <input class="form-control" id="zip" type="text" formControlName="zip">
     </div>
 
     <p>Complete the form to enable button.</p>
@@ -28,20 +31,19 @@
       DEBUG json value {{profileForm.value | json}}
     </div>
 
-    <button type="button" (click)="updateProfile()">Update Profile</button>
+    <button class="btn btn-info" type="button" (click)="updateProfile()">Update Profile</button>
 
 
-    <div formArrayName="aliases">
+    <div class="form-group" formArrayName="aliases">
       <h2>Aliases</h2>
-      <button type="button" (click)="addAlias()">+ Add another alias</button>
+      <button class="btn btn-info" type="button" (click)="addAlias()">+ Add another alias</button>
 
       <div *ngFor="let alias of aliases.controls; let i=index">
-        <!-- The repeated alias template -->
         <label for="alias-{{ i }}">Alias:</label>
-        <input id="alias-{{ i }}" type="text" [formControlName]="i">
+        <input class="form-control" id="alias-{{ i }}" type="text" [formControlName]="i">
       </div>
     </div>
 
-    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
 </div>
