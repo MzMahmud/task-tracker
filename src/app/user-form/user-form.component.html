@@ -8,9 +8,6 @@
     <label for="last-name">Last Name *</label>
     <input type="text" id="last-name" required formControlName="lastName">
 
-    <p>Complete the form to enable button.</p>
-    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
-
     <div formGroupName="address">
       <h2>Address</h2>
       <label for="street">Street*: </label>
@@ -25,5 +22,11 @@
       <label for="zip">Zip Code: </label>
       <input id="zip" type="text" formControlName="zip">
     </div>
+
+    <p>Complete the form to enable button.</p>
+    <div>
+      DEBUG json value {{profileForm.value | json}}
+    </div>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
 </div>
