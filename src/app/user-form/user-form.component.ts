@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
@@ -7,9 +7,8 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent {
-  name = new FormControl('');
-
-  updateName() {
-    this.name.setValue('Test');
-  }
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  });
 }
