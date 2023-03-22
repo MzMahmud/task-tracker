@@ -40,4 +40,12 @@ export class UserFormComponent {
     the entire value for the control.
     */
   }
+
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
+  }
+
+  addAlias() {
+    this.aliases.push(this.formBuilder.control(''));
+  }
 }
