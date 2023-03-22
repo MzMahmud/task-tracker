@@ -27,6 +27,9 @@
     <div>
       DEBUG json value {{profileForm.value | json}}
     </div>
+
+    <button type="button" (click)="updateProfile()">Update Profile</button>
+
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
 </div>
