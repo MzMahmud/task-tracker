@@ -8,4 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class UserFormComponent {
   name = new FormControl('');
+
+  updateName() {
+    this.name.setValue('Test');
+  }
 }
