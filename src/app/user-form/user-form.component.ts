@@ -17,7 +17,10 @@ export class UserFormComponent {
       city: [''],
       state: [''],
       zip: ['']
-    })
+    }),
+    aliases: this.formBuilder.array([
+      this.formBuilder.control('')
+    ])
   });
 
   onSubmit() {
