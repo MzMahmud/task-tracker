@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormArray, Validators } from '@angular/forms';
 import { forbiddenNameValidator } from '../shared/forbidden-name.directive';
+import { sameFirstLastNameValidator } from '../shared/same-first-last-name.validator';
 
 @Component({
   selector: 'app-user-form',
@@ -25,6 +26,8 @@ export class UserFormComponent {
     aliases: this.formBuilder.array([
       this.formBuilder.control('')
     ])
+  }, {
+    validators: sameFirstLastNameValidator
   });
 
   onSubmit() {

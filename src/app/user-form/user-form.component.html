@@ -24,6 +24,11 @@
       <input type="text" class="form-control" id="last-name" required formControlName="lastName">
     </div>
 
+    <div *ngIf="profileForm.errors?.['sameFirstLastName'] && (profileForm.touched || profileForm.dirty)"
+         class="alert alert-danger">
+      First name last can not be same!
+    </div>
+
     <div class="form-group" formGroupName="address">
       <h2>Address</h2>
       <label for="street">Street*: </label>
