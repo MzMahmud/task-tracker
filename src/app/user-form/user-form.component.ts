@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormArray } from '@angular/forms';
+import { FormBuilder, FormArray, Validators } from '@angular/forms';
+import { forbiddenNameValidator } from '../shared/forbidden-name.directive';
 
 @Component({
   selector: 'app-user-form',
@@ -7,10 +8,13 @@ import { FormBuilder, FormArray } from '@angular/forms';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) { }
 
   profileForm = this.formBuilder.group({
-    firstName: [''],
+    firstName: [
+      '',
+      [Validators.required, Validators.minLength(4), forbiddenNameValidator(/^test$/i)]
+    ],
     lastName: [''],
     address: this.formBuilder.group({
       street: [''],
@@ -47,5 +51,9 @@ export class UserFormComponent {
 
   addAlias() {
     this.aliases.push(this.formBuilder.control(''));
+  }
+
+  get firstName() {
+    return this.profileForm.get('firstName');
   }
 }
