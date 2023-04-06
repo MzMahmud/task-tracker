@@ -1,3 +1,10 @@
 <div>
-  Hello World!
+  <button class="btn btn-primary" (click)="openModal()">
+    Confirm
+  </button>
+  <app-confirm-modal #confirmModal
+                     message="Are you really sure!?"
+                     yesText="Yes Sure!"
+                     noText="No Not Sure!">
+  </app-confirm-modal>
 </div>

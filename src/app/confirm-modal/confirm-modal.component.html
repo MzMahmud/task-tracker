@@ -1,0 +1,15 @@
+<div class="confirm-modal" [ngClass]="{'show': show}">
+  <div class="confirm-modal-content">
+    <div class="confirm-modal-body">
+      {{message}}
+    </div>
+    <div class="confirm-modal-foot">
+      <button class="btn btn-success" type="button" (click)="hideModal(true)">
+        {{yesText}}
+      </button>
+      <button class="btn btn-danger" type="button" (click)="hideModal(false)">
+        {{noText}}
+      </button>
+    </div>
+  </div>
+</div>
