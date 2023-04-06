@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
-import { filter, takeWhile } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +13,16 @@ export class AppComponent {
   @ViewChild('confirmModal')
   confirmModal!: ConfirmModalComponent;
 
-  openModal() {
+  async openModal() {
+    /*
+    used with subscribe
     this.confirmModal
       .confirm$()
       .subscribe(confirm => {
         console.log(confirm);
       });
+    */
+    const confirm = await firstValueFrom(this.confirmModal.confirm$());
+    console.log(confirm);
   }
 }
